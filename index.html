@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab 10: api calls</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Data from API</h2>
+    <div class="buttons">
+        <button id="fetch">Fetch Data with fetch()</button>
+        <button id="xhr">Fetch Data with XHR</button>
+    </div>
+    <div id="data">
+    </div>
+    <form id="postForm">
+        <h2 id="formTitle">Input Form</h2>
+        <label for="postID">Post ID:</label>
+        <input type="number" id="postID" name="postID" required>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <div class="buttons">
+            <button type="submit" class="formButtons" id="post">Submit</button>
+            <button type="reset" class="formButtons">Reset</button>
+        </div>
+    </form> 
+    <script src="script.js" defer></script>
+</body>
+</html>
