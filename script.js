@@ -69,3 +69,30 @@ function displayData(data) {
     `;
 }
 
+document.getElementById("update").addEventListener("click", function(event) {
+    event.preventDefault();
+    const title = document.getElementById("title").value;
+    const message = document.getElementById("message").value;
+    const id = document.getElementById("postID").value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('PUT', `https://jsonplaceholder.typicode.com/posts/${id}`);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            const response = JSON.parse(xhr.responseText);
+            alert('Post updated successfully!');
+            console.log(response);
+        } else {
+            alert('Error updating post!');
+            console.error('Error updating post:');
+        }
+    }; 
+
+    const data = JSON.stringify({
+        title: title,
+        body: message,
+    });
+    xhr.send(data);
+});
